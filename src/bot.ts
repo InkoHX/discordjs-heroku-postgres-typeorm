@@ -1,11 +1,20 @@
+import './extensions'
+
 import { Client } from '.'
 
 const client = new Client()
 
-client.on('guildCreate', async guild => {
-  const settings = await guild.getSettings()
-
-  console.log(settings)
+client.on('message', message => {
+  if (message.system || message.author.bot) return
+  if (!message.content.includes('discord')) return
+  
+  Promise.all([
+    message.author.getSettings(),
+    message.member?.getSettings(),
+    message.guild?.getSettings()
+  ])
+    .then(console.log)
+    .catch(console.error)
 })
 
 client.login()
