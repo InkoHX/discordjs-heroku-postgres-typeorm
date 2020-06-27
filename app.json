@@ -1,0 +1,23 @@
+{
+  "name": "discordjs-heroku-postgres-typeorm",
+  "description": "discord.jsとTypeORMを組み合わせてHeroku Postgresを使用するためのテンプレート",
+  "repository": "https://github.com/InkoHX/discordjs-heroku-postgres-typeorm",
+  "env": {
+    "DISCORD_TOKEN": {
+      "description": "Discord bot token"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 0,
+      "size": "free"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ]
+}
