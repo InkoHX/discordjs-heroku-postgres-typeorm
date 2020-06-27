@@ -11,6 +11,7 @@ const production = {
   type: 'postgres',
   url: process.env.DATABASE_URL,
   migrationsTableName: 'migrations',
+  migrationsRun: true,
   entities: [
     'src/entities/*.ts'
   ],
