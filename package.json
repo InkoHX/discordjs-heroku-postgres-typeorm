@@ -2,9 +2,8 @@
   "name": "discordjs-heroku-postgres-typeorm",
   "private": true,
   "scripts": {
-    "start": "node ./dist/bot.js",
     "start:dev": "cross-env NODE_ENV=development ts-node ./src/bot.ts",
-    "typeorm": "cross-env NODE_ENV=development node -r ts-node/register -r dotenv-safe/config ./node_modules/typeorm/cli.js",
+    "typeorm": "cross-env NODE_ENV=development ts-node -r dotenv-safe/config ./node_modules/typeorm/cli.js",
     "compile": "tsc",
     "heroku-postbuild": "tsc"
   },
